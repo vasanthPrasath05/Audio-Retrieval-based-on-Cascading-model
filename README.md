@@ -3,3 +3,4 @@ What if your AI could listen, understand, and retrieve key insights from audio f
 
 Architecture :
 <img width="1147" alt="Image" src="https://github.com/user-attachments/assets/2a6c77cc-c0ba-4c9e-98c9-29851c0ea9d2" />
+  To check aother details https://medium.com/@vasanth.prasath.ai/build-a-audio-retrieval-based-on-a-cascading-model-f39493c3fa6d
