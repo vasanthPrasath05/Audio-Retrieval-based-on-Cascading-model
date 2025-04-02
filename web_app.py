@@ -1,11 +1,11 @@
-import streamlit as st
 import os
+import io
+import time
 import pickle
 import numpy as np
-from Audio_Retireve import _Audio_Retrieve
-import time
+import streamlit as st
 from pydub import AudioSegment
-import io
+from Audio_Retireve import _Audio_Retrieve
 
 pickle_file= "data_embedding.pkl"
 
@@ -39,7 +39,7 @@ class App:
         if files:
             st.write("**Embedding process.**")
             with st.spinner("📥 **Processing...**"):
-                time.sleep(5)
+                time.sleep(2)
                 start_time = time.time()
                 models_instance = self.load_the_model(file_name)
                 Embeddings = models_instance.Embedding_and_store_(file_path=files)
@@ -67,7 +67,7 @@ class App:
                     return Response
 
     def main(self):
-        st.markdown("<h1 style='text-align: center;'> Audio Query master </h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center;'> AUDIO RAG BASED ON CASCADING MODEL </h1>", unsafe_allow_html=True)
         button = st.radio("Select the Mode",["**Training**", "**Retrieval**🔍"])
         overall_time = time.time()
         if button =="**Training**":
