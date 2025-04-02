@@ -131,15 +131,7 @@ class _Audio_to_text:
             "completion_time": round(completion_end_time - completion_start_time, 3),
         }
 
-        clean1 = completion_dict['content'].replace("The original content of this audio is:"," ")
-        clean2= clean1.replace("The exact words spoken in the audio are:"," ")
-        clean3= clean2.replace("The full transcription of the audio is:"," ")
-        clean4= clean3.replace("The original content of this audio is:"," ")
-        clean5= clean4.replace ("The complete transcription of the audio is:", " ")
-        clean6= clean5.replace("The transcription of the speech is:"," ")
-        clean7= clean6.replace("The speech exactly as spoken is:"," ")
-        clean8 = clean7.replace("The speech is:"," ")
-        return clean8.replace("The audio translates to:", " ")
+         return completion_dict['content'].replace("The original content of this audio is:"," ")
     
     def transcription_(self, file_path):
         b64_base = self.__base64_audio(file_path)
@@ -151,14 +143,5 @@ class _Audio_to_text:
         complition = [self.chat_completion(
           messages= msg)
           for msg in messages]
-        # noinspection PyTypeChecker
         text_file = '\n'.join(complition)
         return text_file
-
-if __name__ == "__main__":
-    att = _Audio_to_text()
-    file_path = "hindi_test_file_04.wav"
-    text = att.transcription_(file_path)
-    with open("out_translater_0204.txt","w+")as file :
-        file.write(text)
-    print(f"The text file successfully saved")
