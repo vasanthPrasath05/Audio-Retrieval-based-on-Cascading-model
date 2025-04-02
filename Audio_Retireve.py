@@ -1,4 +1,4 @@
-# import os
+import os
 import time
 import requests
 import json
@@ -138,12 +138,8 @@ class _Audio_Retrieve:
 if __name__=="__main__":
     start_time = time.time()
     Retrieve = _Audio_Retrieve()
-    file_path = "/home/inc/Downloads/ttsMP3.com_VoiceText_2025-3-5_16-15-12.wav"
+    file_path = "PLACE YOUR AUDIO FILE "
     Retrieve.Embedding_and_store_(file_path= file_path)
-    # query = 'what is dhoni date brith?'
-    # retrieve=Retrieve.fit_(query)
-    # print("ANSWER:",retrieve)"repetition_penalty": 1.3
-    # Machine Learning.wav
-    # deep learning.wav
-    # 📖 📄
-    # print (retrieve)
+    query = 'ASK YOUR QUERY'
+    retrieve=Retrieve.fit_(query)
+    print("ANSWER:",retrieve)
